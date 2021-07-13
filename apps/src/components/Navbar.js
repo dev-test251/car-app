@@ -3,6 +3,8 @@ import { NavLink } from "react-router-dom";
 import { UidContext } from "./AppContext";
 import LogOut from "./log/LogOut";
 import { useSelector } from "react-redux";
+import ReactTooltip from "react-tooltip";
+
 
 const Navbar = () => {
   const uid = useContext(UidContext);
@@ -34,7 +36,17 @@ const Navbar = () => {
             <li></li>
             <li>
               <NavLink exact to="/profil">
-                <img src="/img/icons/login.svg" alt="login" />
+                <img src="/img/icons/login.svg" alt="login" data-tip="Vous n'avez pas de compte ? Inscrivez dès maintenant ! " />
+                <ReactTooltip
+                  place="bottom"
+                  type="dark"
+                  textColor="dark"
+                  effect="float"
+                  className="tools"
+                  backgroundColor="white"
+                  borderColor="black"
+                  border="5px true"
+                />
               </NavLink>
             </li>
           </ul>
