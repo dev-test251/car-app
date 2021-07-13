@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useContext } from "react";
-import { useSelector, useDispatch } from "react-redux";
+import { useSelector } from "react-redux";
 import { isEmpty } from "../Utils";
 import { UidContext } from "../AppContext";
 import Popup from "reactjs-popup";
@@ -8,9 +8,7 @@ import CardComment from "./CardComment";
 
 const Card = ({ car, key }) => {
   const [isLoading, setIsLoading] = useState(true);
-  const userData = useSelector((state) => state.userReducer);
   const usersData = useSelector((state) => state.usersReducer);
-  const dispatch = useDispatch();
 
   const [com, setCom] = useState(false);
   const [showComments, setShowComments] = useState(false);

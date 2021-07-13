@@ -1,11 +1,10 @@
 import React, { useState } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { addComment, getCars } from "../../actions/car.actions";
-import { isEmpty, timeStampParser } from "../Utils";
+import { timeStampParser } from "../Utils";
 
 const CardComment = ({ car, key }) => {
   const userData = useSelector((state) => state.userReducer);
-  const usersData = useSelector((state) => state.usersReducer);
   const dispatch = useDispatch();
 
   const [text, setText] = useState("");
@@ -31,25 +30,7 @@ const CardComment = ({ car, key }) => {
                 : "comment-container"
             }
           >
-            {/* {comment.commenterId}
-            <br />
-            {comment.commenterPseudo}
-            <br />
-            {comment.text}
-             */}
             <div className="left-part">
-              {/* {!isEmpty(usersData[0]) &&
-                usersData.map((user) => {
-                  if (user._id === comment.commenterId) return (
-                    <>
-                      <ul>
-                        <li> {user.email} </li>
-                        <li> {user.commenterPseudo} </li>
-                        <li> {user.text} </li>
-                      </ul>
-                    </>
-                  ); 
-                })} */}
               <h3 style={{ width: "250px", fontSize: "13px" }}> Post by : </h3>
             </div>
             <div className="right-part">
